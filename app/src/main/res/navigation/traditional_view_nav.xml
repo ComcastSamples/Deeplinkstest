@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/traditional_view_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.deeplinkstest.ui.fragments.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_fragment1"
+            app:destination="@id/fragment1navigation" />
+        <action
+            android:id="@+id/action_homeFragment_to_composeFragment"
+            app:destination="@id/composeFragment" />
+    </fragment>
+
+
+    <navigation android:id="@+id/fragment1navigation"
+        app:startDestination="@id/fragment1">
+
+        <fragment
+            android:id="@+id/fragment1"
+            android:name="com.example.deeplinkstest.ui.fragments.Fragment1"
+            android:label="Fragment1">
+            <action
+                android:id="@+id/action_fragment1_to_fragment2"
+                app:destination="@id/fragment2" />
+
+            <deepLink
+                android:id="@+id/deepLink"
+                app:uri="2" />
+
+        </fragment>
+
+        <fragment
+            android:id="@+id/fragment2"
+            android:name="com.example.deeplinkstest.ui.fragments.Fragment2"
+            android:label="Fragment2" />
+    </navigation>
+
+
+
+    <fragment
+        android:id="@+id/composeFragment"
+        android:name="com.example.deeplinkstest.ui.fragments.ComposeFragment"
+        android:label="ComposeFragment" />
+
+</navigation>
