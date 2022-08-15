@@ -37,5 +37,9 @@ class HomeFragment : Fragment() {
     binding?.goToTraditionalViews?.setOnClickListener {
       findNavController().navigate(R.id.action_homeFragment_to_fragment1)
     }
+
+    binding?.goToTraditionalActivities?.setOnClickListener {
+      findNavController().navigate(R.id.action_homeFragment_to_activity1)
+    }
   }
 }

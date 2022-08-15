@@ -7,7 +7,7 @@
     <Button
         android:id="@+id/go_to_compose_screen"
         android:textSize="20dp"
-        android:text="Go to Compose screens"
+        android:text="Launch Compose screens"
         android:textAllCaps="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,7 +19,7 @@
     <Button
         android:id="@+id/go_to_traditional_views"
         android:textSize="20dp"
-        android:text="Go to Traditional View based screens"
+        android:text="Launch Fragments"
         android:textAllCaps="false"
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
@@ -27,5 +27,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/go_to_compose_screen" />
+
+    <Button
+        android:id="@+id/go_to_traditional_activities"
+        android:textSize="20dp"
+        android:text="Launch Activities"
+        android:textAllCaps="false"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/go_to_traditional_views" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

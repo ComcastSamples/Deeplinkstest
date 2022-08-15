@@ -33,12 +33,18 @@ class DeepLinkActivity: AppCompatActivity() {
 
       when {
 
+        path.equals("/activity1", ignoreCase = true) -> {
+          navDeepLinkBuilder.setDestination(R.id.activity1)
+        }
+
         path.equals("/fragment1", ignoreCase = true) -> {
           navDeepLinkBuilder.setDestination(R.id.fragment1)
         }
 
         path.equals("/fragment2", ignoreCase = true) -> {
-          navDeepLinkBuilder.setDestination(R.id.fragment2)
+          navDeepLinkBuilder
+            .addDestination(R.id.fragment1)
+            .addDestination(R.id.fragment2)
         }
 
         path.equals("/composeFragment", ignoreCase = true) -> {
