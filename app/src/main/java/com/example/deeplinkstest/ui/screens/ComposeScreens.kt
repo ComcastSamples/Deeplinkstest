@@ -1,10 +1,14 @@
 package com.example.deeplinkstest.ui.screens
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -36,32 +40,20 @@ fun ComposeScreen(deepLinkScreen: String = "") {
 
 @Composable
 private fun GreetingScreen(
-  screeName: String = "Screen1",
+  screenName: String = "Screen1",
   onClick: (() -> Unit)? = null
 ) {
   Column {
-    Greeting(screeName)
+
+    Text(text = "$screenName")
+
+    Spacer(modifier = Modifier.size(20.dp))
 
     onClick?.let {
       Button(onClick = onClick) {
         Text(text = "Load Next Screen")
       }
     }
-  }
-}
-
-
-
-@Composable
-private fun Greeting(name: String) {
-  Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-  DeepLinksTestTheme {
-    Greeting("Android")
   }
 }
 

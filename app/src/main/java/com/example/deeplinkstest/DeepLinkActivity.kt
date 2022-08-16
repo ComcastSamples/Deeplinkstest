@@ -18,10 +18,13 @@ class DeepLinkActivity: AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
 
-    val uri = intent.data
-      ?.buildUpon()
+    /*
+    * ?.buildUpon()
       ?.appendQueryParameter("referrer-host", referrer?.host)
       ?.build()
+    * */
+
+    val uri = intent.data
 
     val navDeepLinkBuilder = NavDeepLinkBuilder(applicationContext)
       .setGraph(R.navigation.traditional_view_nav)

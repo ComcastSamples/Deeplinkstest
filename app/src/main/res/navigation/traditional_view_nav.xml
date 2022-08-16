@@ -7,10 +7,10 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.deeplinkstest.ui.fragments.HomeFragment"
-        android:label="HomeFragment" >
+        android:label="HomeFragment">
         <action
             android:id="@+id/action_homeFragment_to_fragment1"
-            app:destination="@id/fragment1" />
+            app:destination="@id/fragment_level_1" />
         <action
             android:id="@+id/action_homeFragment_to_composeFragment"
             app:destination="@id/composeFragment" />
@@ -20,24 +20,35 @@
     </fragment>
 
 
-    <fragment
-        android:id="@+id/fragment1"
-        android:name="com.example.deeplinkstest.ui.fragments.Fragment1"
-        android:label="Fragment1">
-        <action
-            android:id="@+id/action_fragment1_to_fragment2"
-            app:destination="@id/fragment2" />
+    <navigation
+        android:id="@+id/fragment_level_1"
+        app:startDestination="@id/fragment1">
+        <fragment
+            android:id="@+id/fragment1"
+            android:name="com.example.deeplinkstest.ui.fragments.Fragment1"
+            android:label="Fragment1">
+            <action
+                android:id="@+id/action_fragment1_to_fragment2"
+                app:destination="@id/fragment2" />
 
-        <deepLink
-            android:id="@+id/deepLink"
-            app:uri="2" />
+            <deepLink app:uri="deeplinkstest://example.com/fragment1" />
 
-    </fragment>
+        </fragment>
+    </navigation>
 
-    <fragment
-        android:id="@+id/fragment2"
-        android:name="com.example.deeplinkstest.ui.fragments.Fragment2"
-        android:label="Fragment2" />
+
+<!--    <navigation-->
+<!--        android:id="@+id/fragment_level_2"-->
+<!--        app:startDestination="@id/fragment2">-->
+        <fragment
+            android:id="@+id/fragment2"
+            android:name="com.example.deeplinkstest.ui.fragments.Fragment2"
+            android:label="Fragment2">
+
+            <deepLink app:uri="deeplinkstest://example.com/fragment2" />
+
+        </fragment>
+<!--    </navigation>-->
 
     <fragment
         android:id="@+id/composeFragment"
@@ -47,6 +58,8 @@
     <activity
         android:id="@+id/activity1"
         android:name="com.example.deeplinkstest.Activity1"
-        android:label="Activity 1" />
+        android:label="Activity 1">
+
+    </activity>
 
 </navigation>
