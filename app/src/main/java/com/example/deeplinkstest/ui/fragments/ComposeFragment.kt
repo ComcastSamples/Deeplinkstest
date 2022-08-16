@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.compose.ui.unit.dp
 import androidx.fragment.app.Fragment
+import androidx.navigation.compose.rememberNavController
 import com.example.deeplinkstest.databinding.ComposeFragmentBinding
 import com.example.deeplinkstest.ui.screens.ComposeScreen
 import com.example.deeplinkstest.ui.screens.DEEP_LINK_DEST
@@ -51,7 +52,15 @@ class ComposeFragment: Fragment() {
               verticalArrangement = Arrangement.Center,
               horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                ComposeScreen(arguments?.getString(DEEP_LINK_DEST) ?: "")
+
+                val navController = rememberNavController()
+
+                ComposeScreen(navController)
+
+                val deepLinkDest = arguments?.getString(DEEP_LINK_DEST) ?: ""
+                if (deepLinkDest.isNotEmpty()) {
+                  navController.navigate(deepLinkDest)
+                }
             }
           }
         }

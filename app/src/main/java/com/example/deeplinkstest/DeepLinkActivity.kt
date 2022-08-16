@@ -54,7 +54,7 @@ class DeepLinkActivity: AppCompatActivity() {
           navDeepLinkBuilder.setDestination(R.id.composeFragment)
         }
 
-        path.equals("/composeFragment/Screen1", ignoreCase = true) -> {
+        path.equals("/Screen1", ignoreCase = true) -> {
           navDeepLinkBuilder
             .setDestination(R.id.composeFragment)
             .setArguments(
@@ -64,7 +64,7 @@ class DeepLinkActivity: AppCompatActivity() {
             )
         }
 
-        path.equals("/composeFragment/Screen2", ignoreCase = true) -> {
+        path.equals("/Screen2", ignoreCase = true) -> {
           navDeepLinkBuilder
             .setDestination(R.id.composeFragment)
             .setArguments(

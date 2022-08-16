@@ -7,20 +7,17 @@ import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
-import com.example.deeplinkstest.ui.theme.DeepLinksTestTheme
 
 
 
 @Composable
-fun ComposeScreen(deepLinkScreen: String = "") {
+fun ComposeScreen(navController: NavHostController) {
   val startDestination = SCREEN1
   val screen2 = SCREEN2
-  val navController = rememberNavController()
   NavHost(
     navController = navController,
     startDestination = startDestination
@@ -30,10 +27,6 @@ fun ComposeScreen(deepLinkScreen: String = "") {
     }
     composable(screen2) {
       GreetingScreen(screen2)
-    }
-
-    if (deepLinkScreen.isNotEmpty()) {
-      navController.navigate(deepLinkScreen)
     }
   }
 }
