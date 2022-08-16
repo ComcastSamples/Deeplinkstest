@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/traditional_view_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.deeplinkstest.ui.fragments.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/action_homeFragment_to_fragment1"
+            app:destination="@id/fragment_level_1" />
+        <action
+            android:id="@+id/action_homeFragment_to_composeFragment"
+            app:destination="@id/composeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_activity1"
+            app:destination="@id/activity1" />
+    </fragment>
+
+
+    <navigation
+        android:id="@+id/fragment_level_1"
+        app:startDestination="@id/fragment1">
+        <fragment
+            android:id="@+id/fragment1"
+            android:name="com.example.deeplinkstest.ui.fragments.Fragment1"
+            android:label="Fragment1">
+            <action
+                android:id="@+id/action_fragment1_to_fragment2"
+                app:destination="@id/fragment2" />
+
+            <deepLink app:uri="deeplinkstest://example.com/fragment1" />
+
+        </fragment>
+    </navigation>
+
+
+<!--    <navigation-->
+<!--        android:id="@+id/fragment_level_2"-->
+<!--        app:startDestination="@id/fragment2">-->
+        <fragment
+            android:id="@+id/fragment2"
+            android:name="com.example.deeplinkstest.ui.fragments.Fragment2"
+            android:label="Fragment2">
+
+            <deepLink app:uri="deeplinkstest://example.com/fragment2" />
+
+        </fragment>
+<!--    </navigation>-->
+
+    <fragment
+        android:id="@+id/composeFragment"
+        android:name="com.example.deeplinkstest.ui.fragments.ComposeFragment"
+        android:label="ComposeFragment" />
+
+    <activity
+        android:id="@+id/activity1"
+        android:name="com.example.deeplinkstest.Activity1"
+        android:label="Activity 1">
+
+    </activity>
+
+</navigation>
